@@ -1,14 +1,11 @@
-from datavisualization import visualise_image
-import torchvision
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader, Dataset
-import requests
+from extract_data import extract_data
 from PIL import Image
+import requests
 from io import BytesIO
-import torch
-from torchvision.datasets import ImageFolder
-from torchvision import datasets
-import pickle
+import zipfile
+import pathlib 
+import random
+import os
 
 def visualise_image():
     url = extract_data()
