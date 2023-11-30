@@ -12,7 +12,10 @@ def visualise_image():
     url_response = requests.get(url)
     with zipfile.ZipFile(BytesIO(url_response.content)) as z:
         z.extractall('.')
-    # print("------------",os.listdir(os.path.join(os.getcwd(),"Training/pituitary_tumor")))
+    glioma_tumor_images = os.listdir(os.path.join(os.getcwd(),"Training/glioma_tumor"))
+    meningioma_tumor_images = os.listdir(os.path.join(os.getcwd(),"Training/meningioma_tumor"))
+    no_tumor_images = os.listdir(os.path.join(os.getcwd(),"Training/meningioma_tumor"))
+    pituitory_tumor_images = os.listdir(os.path.join(os.getcwd(),"Training/pituitary_tumor"))
     path = pathlib.Path(os.path.join(os.getcwd(),"Training"))
     def open_random_image(path):
         # Get a list of all files in the folder
@@ -29,6 +32,6 @@ def visualise_image():
     meningioma_tumor_image.save('meningioma_tumor.jpg')
     no_tumor_image.save('no_tumor.jpg')
     pituitory_tumor_image.save('pituitory_tumor.jpg')
-    return path
+    return path,glioma_tumor_images,meningioma_tumor_images,no_tumor_images,pituitory_tumor_images
 
 visualise_image()
