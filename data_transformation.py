@@ -6,7 +6,9 @@ import requests
 from PIL import Image
 from io import BytesIO
 import torch
-import dill as pickle
+from torchvision.datasets import ImageFolder
+from torchvision import datasets
+import pickle
 
 def transform_data():
     path,glioma_tumor_images,meningioma_tumor_images,no_tumor_images,pituitory_tumor_images = visualise_image()
