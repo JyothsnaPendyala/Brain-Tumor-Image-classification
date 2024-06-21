@@ -3,3 +3,4 @@ torchvision
 torchaudio
 dill
 boto3
+requests
